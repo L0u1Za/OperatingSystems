@@ -61,7 +61,7 @@ int main()
   } else {
 
     /* Child process */
-    if (close(fd[1][1]) < 0) {
+    if (close(fd[0][1]) < 0) {
       printf("[child] Can\'t close writing side of 1 pipe\n"); exit(-1);
     }
 
