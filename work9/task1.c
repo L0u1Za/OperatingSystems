@@ -5,6 +5,21 @@
 #include <sys/sem.h>
 #include <sys/ipc.h>
 
+/*
+S = 0
+cycle 0 to N:
+    <-Parent process->
+    write()
+    A(S,2)
+    Z(S)
+    read()
+    <-Child process->
+    D(S,1)
+    read()
+    write()
+    D(S,1)
+*/
+
 int main() {
     int     fd[2], result;
 
